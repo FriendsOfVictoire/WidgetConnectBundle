@@ -1,0 +1,7 @@
+victoire_widget_connect_login_form:
+    path:      /victoire/connect-widget/login-form/{id}
+    defaults:  { _controller: VictoireWidgetConnectBundle:Login:loginForm }
+
+victoire_widget_connect_login_resource_owners:
+    path:      /victoire/connect-widget/resource-owners/{id}/{service}
+    defaults:  { _controller: VictoireWidgetConnectBundle:Login:resourceOwners }

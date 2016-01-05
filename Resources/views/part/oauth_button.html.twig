@@ -1,0 +1,11 @@
+{% set oauth_trans = oauth_trans is defined ? oauth_trans : 'victoire' %}
+
+{% block oauth_buttons %}
+    {% for resource_owner in resourceOwners.resource_owners %}
+        <div>
+            {% set path = get_template_path('VictoireWidgetConnectBundle:buttons:' ~ resource_owner ~ '.html.twig') %}
+            {% set path = path ? path : get_template_path('VictoireWidgetConnectBundle:buttons:default.html.twig') %}
+            {% embed path %}{% endembed %}
+        </div>
+    {% endfor %}
+{% endblock oauth_buttons %}

@@ -1,0 +1,11 @@
+victoire_core:
+    widgets:
+        Connect:
+            class: "Victoire\\Widget\\ConnectBundle\\Entity\\WidgetConnect"
+            name: Connect
+            
+jms_translation:
+    configs:
+        victoire_connect_bundle:
+            dirs: ["@VictoireConnectBundle"]
+            output_dir: "@VictoireConnectBundle/Resources/translations"

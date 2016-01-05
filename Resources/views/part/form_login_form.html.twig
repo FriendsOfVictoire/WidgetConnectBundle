@@ -1,0 +1,12 @@
+{% trans_default_domain 'victoire' %}
+
+<div class="vic-col-lg-6">
+    <h3>{{ 'widget_connect.form.login_form.title'|trans }}</h3>
+    <hr>
+    {{ form_row(form.formLogin) }}
+
+    <h6>{{ 'widget_connect.form.login_form.preview'|trans }}</h6>
+    <div class="vic-preview">
+        {% include 'VictoireWidgetConnectBundle:part:login_form.html.twig' with {formLogin: 1} %}
+    </div>
+</div>

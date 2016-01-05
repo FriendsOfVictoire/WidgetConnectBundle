@@ -1,0 +1,53 @@
+{% set login_trans = login_trans is defined ? login_trans : 'victoire' %}
+
+{% block login_form %}
+    {% if formLogin %}
+        <form action="{% block login_action%}{{ path("victoire_widget_connect_login_form", {id: widget.id}) }}{% endblock %}" method="POST">
+            {% block csrf_token %}
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+            {% endblock csrf_token %}
+
+            {% block fields %}
+                {% block username %}
+                    <div>
+                        <label for="username">
+                            {% block username_label %}
+                                {{ 'victoire.widget.connect.form.username'|trans({}, login_trans) }}
+                            {% endblock username_label %}
+                        </label>
+                        <input type="text" id="username" name="_username" required="required" />
+                    </div>
+                {% endblock username %}
+
+                {% block password %}
+                    <div>
+                        <label for="password">
+                            {% block password_label %}
+                                {{ 'victoire.widget.connect.form.password'|trans({}, login_trans) }}
+                            {% endblock password_label %}
+                        </label>
+                        <input type="password" id="password" name="_password" required="required" />
+                    </div>
+                {% endblock password %}
+            {% endblock fields %}
+
+            {% block remember_me %}
+                <div>
+                    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                    <label for="remember_me">
+                        {% block remember_me_label %}
+                            {{ 'victoire.widget.connect.form.remember'|trans({}, login_trans) }}
+                        {% endblock remember_me_label %}
+                    </label>
+                </div>
+            {% endblock remember_me %}
+
+            {% block submit %}
+                <div>
+                    <input type="submit" id="_submit" name="_submit"
+                           value="{% block submit_label %}{{ 'victoire.widget.connect.form.submit'|trans({}, login_trans) }}{% endblock %}" />
+                </div>
+            {% endblock submit %}
+        </form>
+    {% endif %}
+{% endblock login_form %}

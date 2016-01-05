@@ -1,0 +1,24 @@
+{
+    "name": "friendsofvictoire/connect-widget",
+    "type": "symfony-bundle",
+    "description": "Victoire Connect widget",
+    "keywords": ["victoire", "Connect", "widget"],
+    "homepage": "http://victoire.io",
+    "license": "MIT",
+    "require": {
+        "php"                      : ">=5.3.3",
+        "symfony/framework-bundle" : "~2.3",
+        "victoire/victoire"        : "dev-master"
+    },
+    "authors"          : [
+        {
+            "name"    : "Vincent Chapron",
+            "email"   : "vincent@appventus.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Victoire\\Widget\\ConnectBundle": "" }
+    },
+    "minimum-stability": "dev",
+    "target-dir": "Victoire/Widget/ConnectBundle"
+}

@@ -1,0 +1,10 @@
+{% set logout_trans = logout_trans is defined ? logout_trans : 'victoire' %}
+
+{% block logout_action %}
+    <a href="{% block logout_href %}{{ path('fos_user_security_logout')|e('html_attr') }}{% endblock %}"
+       title="{% block logout_title %}{{ 'victoire.widget.connect.logout.title'|trans({}, logout_trans)|e('html_attr') }}{% endblock %}">
+        {% block logout_label %}
+            {{ 'victoire.widget.connect.logout.label'|trans({}, logout_trans)|raw }}
+        {% endblock logout_label %}
+    </a>
+{% endblock logout_action %}

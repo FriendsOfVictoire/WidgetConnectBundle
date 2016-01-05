@@ -1,0 +1,38 @@
+{% extends 'VictoireCoreBundle:Widget:new.html.twig' %}
+{% trans_default_domain 'victoire' %}
+
+{% block form %}
+    {# METTRE DANS UNE STYLESHEET A PART #}
+    <style>
+        .vic-preview {background: #F5F5F5; padding: 25px;}
+    </style>
+
+    {{ form_start(form) }}
+    <div class="vic-row">
+        {% include 'VictoireWidgetConnectBundle:part:form_general.html.twig' %}
+        {% include 'VictoireWidgetConnectBundle:part:form_login_form.html.twig' %}
+        {% include 'VictoireWidgetConnectBundle:part:form_resource_owners.html.twig' %}
+
+        <div class="vic-col-sm-12">
+            {{ form_rest(form) }}
+        </div>
+    </div>
+    {{ form_end(form) }}
+
+    {# METTRE DANS UN SCRIPT A PART #}
+    <script>
+        $vic(document).ready(function(){
+            $vic('.resource_owners input[type="checkbox"]').each(function(){
+                var owner = $vic(this).val();
+                $vic(this).closest('.vic-checkbox').after($vic('.resource_owner_' + owner));
+                $vic(this).on('change', function() {
+                    if ($vic('.resource_owner_' + owner).hasClass('vic-hidden')) {
+                        $vic('.resource_owner_' + owner).removeClass('vic-hidden');
+                    } else {
+                        $vic('.resource_owner_' + owner).addClass('vic-hidden');
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock form %}

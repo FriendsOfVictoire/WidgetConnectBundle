@@ -1,0 +1,48 @@
+services:
+    victoire_core.widget_connect_content_resolver:
+        class: Victoire\Widget\ConnectBundle\Resolver\WidgetConnectContentResolver
+        parent: victoire_widget.base_widget_content_resolver
+        tags:
+            - { name: victoire_widget.widget_content_resolver, alias: Connect }
+
+    #entity alias
+    victoire.widget.connect:
+        class: Victoire\Widget\ConnectBundle\Entity\WidgetConnect
+
+    #form alias
+    victoire.widget.form.connect:
+        class: Victoire\Widget\ConnectBundle\Form\WidgetConnectType
+        tags:
+            - { name: form.type , alias: victoire_widget_form_connect }
+    victoire.widget.form.resource_owners:
+        class: Victoire\Widget\ConnectBundle\Form\ResourceOwnersType
+        tags:
+            - { name: form.type , alias: resource_owner_type }
+        arguments:
+            - %hwi_oauth.resource_owners%
+
+    #HANDLER
+    victoire.widget.connect.handler.success.logout:
+        class: Victoire\Widget\ConnectBundle\Handler\LogoutSuccessHandler
+    victoire.widget.connect.handler.success.authentication:
+        class: Victoire\Widget\ConnectBundle\Handler\AuthenticationSuccessHandler
+        arguments:
+            - @session
+    victoire.widget.connect.handler.failure.authentication:
+        class: Victoire\Widget\ConnectBundle\Handler\AuthenticationFailureHandler
+        arguments:
+            - @session
+            - @http_kernel
+            - @security.http_utils
+            - {}
+            - @logger
+
+    #TWIG EXTENSION
+    victoire.widget.connect.extension.file:
+        class: Victoire\Widget\ConnectBundle\Twig\FileExtension
+        public: false
+        arguments:
+            - @templating.name_parser
+            - @templating.locator
+        tags:
+            - { name: twig.extension }

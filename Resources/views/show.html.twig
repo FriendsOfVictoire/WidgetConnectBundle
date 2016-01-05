@@ -1,0 +1,17 @@
+{% extends 'VictoireCoreBundle:Widget:show.html.twig' %}
+
+{% block content %}
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        {% block logout %}
+            {% embed 'VictoireWidgetConnectBundle:part:logout_action.html.twig' %}{% endembed %}
+        {% endblock logout %}
+    {% else %}
+        {% block login %}
+            {% embed 'VictoireWidgetConnectBundle:part:login_form.html.twig' %}{% endembed %}
+        {% endblock login %}
+
+        {% block oauth %}
+            {% embed 'VictoireWidgetConnectBundle:part:oauth_button.html.twig' %}{% endembed %}
+        {% endblock oauth %}
+    {% endif %}
+{% endblock content %}
