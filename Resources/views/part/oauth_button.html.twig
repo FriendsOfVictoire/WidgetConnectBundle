@@ -3,8 +3,7 @@
 {% block oauth_buttons %}
     {% for resource_owner in resourceOwners.resource_owners %}
         <div>
-            {% set path = get_template_path('VictoireWidgetConnectBundle:buttons:' ~ resource_owner ~ '.html.twig')|default('VictoireWidgetConnectBundle:buttons:default.html.twig') %}
-            {% embed path %}{% endembed %}
+            {% embed attribute(resourceOwners, constant('PREFIX_RESOURCE_OWNER_TEMPLATE', widget) ~ resource_owner) %}{% endembed %}
         </div>
     {% endfor %}
 {% endblock oauth_buttons %}
