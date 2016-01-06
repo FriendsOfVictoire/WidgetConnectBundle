@@ -35,6 +35,8 @@ with `resource_owner` the name to a resource owner define in the hwi configurati
 
 - [INDEX][link-menu-readme]
 - [HWI OAUTH BUNDLE & WIDGET CONNECT OPTIONS][link-menu-hwi-options]
+- [HANDLERS][link-menu-handlers]
 
 [link-menu-readme]: ../../../../
 [link-menu-hwi-options]: hwi_and_widget_connect.md
+[link-menu-handlers]: handlers.md
