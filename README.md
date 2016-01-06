@@ -41,7 +41,9 @@ Then you just need to have `ROLE_VICTOIRE_DEVELOPER` and add this widget.
 - [HWI OAUTH BUNDLE & WIDGET CONNECT OPTIONS][link-menu-hwi-options]
 - [OVERRIDE TEMPLATES][link-menu-override-templates]
 - [HANDLERS][link-menu-handlers]
+- [EVENTS][link-menu-events]
 
 [link-menu-hwi-options]: Resources/doc/hwi_and_widget_connect.md
 [link-menu-override-templates]: Resources/doc/override_templates.md
 [link-menu-handlers]: Resources/doc/handlers.md
+[link-menu-events]: Resources/doc/events.md

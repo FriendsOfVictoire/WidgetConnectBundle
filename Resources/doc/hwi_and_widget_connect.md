@@ -59,7 +59,9 @@ defines in your hwi configuration.
 - [INDEX][link-menu-readme]
 - [OVERRIDE TEMPLATES][link-menu-override-templates]
 - [HANDLERS][link-menu-handlers]
+- [EVENTS][link-menu-events]
 
 [link-menu-readme]: ../../../../
 [link-menu-override-templates]: override_templates.md
 [link-menu-handlers]: handlers.md
+[link-menu-events]: events.md
