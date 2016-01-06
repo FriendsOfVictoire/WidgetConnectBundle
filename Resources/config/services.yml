@@ -4,6 +4,8 @@ services:
         parent: victoire_widget.base_widget_content_resolver
         tags:
             - { name: victoire_widget.widget_content_resolver, alias: Connect }
+        arguments:
+            - @victoire.widget.connect.provider.file
 
     #entity alias
     victoire.widget.connect:
@@ -37,12 +39,18 @@ services:
             - {}
             - @logger
 
+    #PROVIDER
+    victoire.widget.connect.provider.file:
+        class: Victoire\Widget\ConnectBundle\Provider\FileProvider
+        arguments:
+            - @templating.name_parser
+            - @templating.locator
+
     #TWIG EXTENSION
     victoire.widget.connect.extension.file:
         class: Victoire\Widget\ConnectBundle\Twig\FileExtension
         public: false
         arguments:
-            - @templating.name_parser
-            - @templating.locator
+            - @victoire.widget.connect.provider.file
         tags:
             - { name: twig.extension }

@@ -4,18 +4,15 @@ namespace Victoire\Widget\ConnectBundle\Twig;
 
 use Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator;
 use Symfony\Component\Templating\TemplateNameParser;
+use Victoire\Widget\ConnectBundle\Provider\FileProvider;
 
 class FileExtension extends \Twig_Extension
 {
     /** @var TemplateNameParser */
-    protected $parser;
+    protected $fileProvider;
 
-    /** @var TemplateLocator  */
-    protected $locator;
-
-    public function __construct(TemplateNameParser $parser, TemplateLocator $locator) {
-        $this->parser = $parser;
-        $this->locator = $locator;
+    public function __construct(FileProvider $fileProvider) {
+        $this->fileProvider = $fileProvider;
     }
 
     public function getFunctions() {
@@ -30,12 +27,7 @@ class FileExtension extends \Twig_Extension
      */
     public function getTemplatePathFunction($view)
     {
-        try {
-            $path = $this->locator->locate($this->parser->parse($view));
-        } catch (\InvalidArgumentException $e) {
-            return null;
-        }
-        return $path;
+        return $this->fileProvider->getTemplatePathFunction($view);
     }
 
     public function getName()

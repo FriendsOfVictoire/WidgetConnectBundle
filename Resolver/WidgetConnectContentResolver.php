@@ -5,6 +5,8 @@ namespace Victoire\Widget\ConnectBundle\Resolver;
 
 use Victoire\Bundle\WidgetBundle\Model\Widget;
 use Victoire\Bundle\WidgetBundle\Resolver\BaseWidgetContentResolver;
+use Victoire\Widget\ConnectBundle\Entity\WidgetConnect;
+use Victoire\Widget\ConnectBundle\Provider\FileProvider;
 
 /**
  * CRUD operations on WidgetConnect Widget
@@ -31,15 +33,31 @@ use Victoire\Bundle\WidgetBundle\Resolver\BaseWidgetContentResolver;
  */
 class WidgetConnectContentResolver extends BaseWidgetContentResolver
 {
+    /** @var FileProvider  */
+    protected $fileProvider;
+
+    public function __construct(FileProvider $fileProvider) {
+        $this->fileProvider = $fileProvider;
+    }
+
     /**
-     * Get the static content of the widget
+     * Get the static content of the wdget
      *
      * @param Widget $widget
      * @return string The static content
      */
     public function getWidgetStaticContent(Widget $widget)
     {
-        return parent::getWidgetStaticContent($widget);
+        $parameters = parent::getWidgetStaticContent($widget);
+        $resourceOwners = $parameters['resourceOwners']['resource_owners'];
+
+        foreach ($resourceOwners as $resourceOwner) {
+            $path = $this->fileProvider->getTemplatePathFunction("VictoireWidgetConnectBundle:buttons:$resourceOwner.html.twig") ?
+                : 'VictoireWidgetConnectBundle:buttons:default.html.twig';
+            $parameters['resourceOwners'][WidgetConnect::PREFIX_RESOURCE_OWNER_TEMPLATE . $resourceOwner] = $path;
+        }
+
+        return $parameters;
     }
 
     /**
