@@ -1,17 +1,28 @@
 ## EVENTS
 
-Many events are dispatch.
+#### EVENT_BEFORE_LOGIN and EVENT_BEFORE_HWI_LOGIN
 
 `WidgetConnect::EVENT_BEFORE_LOGIN` and `WidgetConnect::EVENT_BEFORE_HWI_LOGIN` are dispatch in the `LoginController`
 with `AuthenticationEvent` which contains the widget and extend `Symfony\Component\EventDispatcher\Event` and
 the `service` (resource_owner) for HWI event.
 
+---
+
+#### EVENT_AFTER_LOGIN_FAILURE
 
 `WidgetConnect::EVENT_AFTER_LOGIN_FAILURE` is dispatch in the `AuthenticationFailureHandler`, contains the
 `RedirectResponse` and extends `Symfony\Component\EventDispatcher\Event`.
 
+---
+
+#### EVENT_AFTER_LOGIN_SUCCESS
+
 `WidgetConnect::EVENT_AFTER_LOGIN_SUCCESS` is dispatch in the `AuthenticationSuccessHandler`, contains the
 `RedirectResponse` and extends `Symfony\Component\EventDispatcher\Event`.
+
+---
+
+#### EVENT_AFTER_LOGOUT
 
 `WidgetConnect::EVENT_AFTER_LOGOUT` is dispatch in the `LogoutSuccessHandler`, contains the `RedirectResponse` and
 extends `Symfony\Component\EventDispatcher\Event`.

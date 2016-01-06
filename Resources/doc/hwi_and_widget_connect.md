@@ -4,6 +4,7 @@ If [HWIOauthBundle][link-github-hwi] is enable on your project and you define re
 more options.
 
 Here an example of hwi resource owners configuration.
+
 ```yaml
 hwi_oauth:
     #[...]

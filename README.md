@@ -7,7 +7,7 @@ Need to add a login form in a victoire cms website ?
 First you need to have a valid Symfony Victoire edition.
 Then you just have to run the following composer command :
 
-```
+```bash
     php composer.phar require friendsofvictoire/connect-widget
 ```
 
@@ -18,7 +18,8 @@ Declare your widget in your AppKernel:
 ```
 
 Add routes in `app\config\routing.yml`
-```
+
+```yaml
 victoire_widget_connect:
     resource: "@VictoireWidgetConnectBundle/Resources/config/routing.yml"
 ```
