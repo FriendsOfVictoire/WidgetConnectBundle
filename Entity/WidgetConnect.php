@@ -18,6 +18,7 @@ class WidgetConnect extends Widget
     const PREFIX_RESOURCE_OWNER_FORM_LABEL = 'widget_connect.form.resource_owner.';
     const PREFIX_RESOURCE_OWNERS_FORM_LABEL = 'widget_connect.form.resource_owners.';
     const PREFIX_RESOURCE_OWNER_LABEL = 'resource_owner_';
+    const PREFIX_RESOURCE_OWNER_TEMPLATE = 'resource_owner_template_';
     const SESSION_REDIRECT_URL = 'victoire.widget.connect.redirect_url';
 
     /**
