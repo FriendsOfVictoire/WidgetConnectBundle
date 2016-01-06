@@ -33,7 +33,7 @@ class FileExtension extends \Twig_Extension
         try {
             $path = $this->locator->locate($this->parser->parse($view));
         } catch (\InvalidArgumentException $e) {
-            return false;
+            return null;
         }
         return $path;
     }
