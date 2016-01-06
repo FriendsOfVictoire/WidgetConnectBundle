@@ -22,6 +22,9 @@ class WidgetConnect extends Widget
     const SESSION_REDIRECT_URL = 'victoire.widget.connect.redirect_url';
     const EVENT_BEFORE_LOGIN = 'victoire.widget.connect.before_login';
     const EVENT_BEFORE_HWI_LOGIN = 'victoire.widget.connect.before_hwi_login';
+    const EVENT_AFTER_LOGIN_FAILURE = 'victoire.widget.connect.after_login_failure';
+    const EVENT_AFTER_LOGIN_SUCCESS = 'victoire.widget.connect.after_login_success';
+    const EVENT_AFTER_LOGOUT = 'victoire.widget.connect.after_logout';
 
     /**
      * @var boolean

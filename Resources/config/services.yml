@@ -26,13 +26,17 @@ services:
     #HANDLER
     victoire.widget.connect.handler.success.logout:
         class: Victoire\Widget\ConnectBundle\Handler\LogoutSuccessHandler
+        arguments:
+            - @event_dispatcher
     victoire.widget.connect.handler.success.authentication:
         class: Victoire\Widget\ConnectBundle\Handler\AuthenticationSuccessHandler
         arguments:
+            - @event_dispatcher
             - @session
     victoire.widget.connect.handler.failure.authentication:
         class: Victoire\Widget\ConnectBundle\Handler\AuthenticationFailureHandler
         arguments:
+            - @event_dispatcher
             - @session
             - @http_kernel
             - @security.http_utils
