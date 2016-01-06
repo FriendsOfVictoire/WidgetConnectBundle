@@ -1,0 +1,43 @@
+.btn {
+    &.vic-btn-facebook, &.vic-btn-twitter, &.vic-btn-linkedin, &.vic-btn-google, &.vic-btn-github, &.vic-btn-yahoo, &.vic-btn-wordpress {
+        color: #ffffff;
+        display: inline-block;
+        line-height: 20px;
+        .fa {
+            padding: 0 5px 0 0;
+        }
+        &:hover {
+            color: #ffffff;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+    }
+
+    &.vic-btn-facebook {
+        background-color: #3b5998;
+    }
+
+    &.vic-btn-twitter {
+        background-color: #00c3f3;
+    }
+
+    &.vic-btn-linkedin {
+        background-color: #4875B4;
+    }
+
+    &.vic-btn-google {
+        background-color: #DC4E41;
+    }
+
+    &.vic-btn-github {
+        background-color: #333333;
+    }
+
+    &.vic-btn-wordpress {
+        background-color: #21759b;
+    }
+
+    &.vic-btn-yahoo {
+        background-color: #7B0099;
+    }
+}

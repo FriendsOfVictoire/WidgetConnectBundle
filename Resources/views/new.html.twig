@@ -2,11 +2,6 @@
 {% trans_default_domain 'victoire' %}
 
 {% block form %}
-    {# METTRE DANS UNE STYLESHEET A PART #}
-    <style>
-        .vic-preview {background: #F5F5F5; padding: 25px;}
-    </style>
-
     {{ form_start(form) }}
     <div class="vic-row">
         {% include 'VictoireWidgetConnectBundle:part:form_general.html.twig' %}
@@ -19,8 +14,8 @@
     </div>
     {{ form_end(form) }}
 
-    {# METTRE DANS UN SCRIPT A PART #}
     <script>
+        <!--
         $vic(document).ready(function(){
             $vic('.resource_owners input[type="checkbox"]').each(function(){
                 var owner = $vic(this).val();
@@ -34,5 +29,6 @@
                 });
             });
         });
+        -->
     </script>
 {% endblock form %}
