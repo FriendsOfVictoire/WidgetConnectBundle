@@ -19,7 +19,7 @@
         $vic(document).ready(function(){
             $vic('.resource_owners input[type="checkbox"]').each(function(){
                 var owner = $vic(this).val();
-                $vic(this).closest('.vic-checkbox').after($vic('.resource_owner_' + owner));
+                $vic(this).closest('.vic-checkbox').after($vic('.resource_owner_' + owner + '_container'));
                 $vic(this).on('change', function() {
                     if ($vic('.resource_owner_' + owner).hasClass('vic-hidden')) {
                         $vic('.resource_owner_' + owner).removeClass('vic-hidden');
