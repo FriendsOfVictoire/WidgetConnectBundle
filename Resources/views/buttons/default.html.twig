@@ -1,6 +1,6 @@
 {% block oauth_button %}
     <a href="{% block button_href %}{{ path("victoire_widget_connect_login_resource_owners", {id: widget.id, service: resource_owner}) }}{% endblock %}"
-            {% block button_attr %}{% endblock %}>
+            class="{% block button_class %}btn btn-default{% endblock %}" {% block button_attr %}{% endblock %}>
         {% block button_label %}
             {{ attribute(resourceOwners, constant('PREFIX_RESOURCE_OWNER_LABEL', widget) ~ resource_owner) }}
         {% endblock button_label %}
