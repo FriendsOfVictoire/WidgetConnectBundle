@@ -15,14 +15,6 @@
             <div class="resource_owner_{{ owner }}{{ class }}">
                 {% set form_owner = attribute(form.resourceOwners, 'resource_owner_' ~ owner) %}
                 {{ form_row(form_owner) }}
-                <h6>{{ 'widget_connect.form.login_form.preview'|trans }}</h6>
-                <div class="vic-preview">
-                    {% set path = get_template_path('VictoireWidgetConnectBundle:buttons:' ~ owner ~ '.html.twig')|default('VictoireWidgetConnectBundle:buttons:default.html.twig') %}
-                    {% embed path %}
-                        {% block button_href %}{{ path('hwi_oauth_service_redirect', {service: owner}) }}{% endblock %}
-                        {% block button_label %}{{ form_owner.vars.value }}{% endblock %}
-                    {% endembed %}
-                </div>
             </div>
         </div>
     {% endfor %}
