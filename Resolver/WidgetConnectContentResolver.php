@@ -5,6 +5,7 @@ namespace Victoire\Widget\ConnectBundle\Resolver;
 
 use Victoire\Bundle\WidgetBundle\Model\Widget;
 use Victoire\Bundle\WidgetBundle\Resolver\BaseWidgetContentResolver;
+use Victoire\Bundle\WidgetBundle\Twig\LinkExtension;
 use Victoire\Widget\ConnectBundle\Entity\WidgetConnect;
 use Victoire\Widget\ConnectBundle\Provider\FileProvider;
 
@@ -36,8 +37,11 @@ class WidgetConnectContentResolver extends BaseWidgetContentResolver
     /** @var FileProvider  */
     protected $fileProvider;
 
-    public function __construct(FileProvider $fileProvider) {
+    protected $linkExtension;
+
+    public function __construct(FileProvider $fileProvider, LinkExtension $linkExtension) {
         $this->fileProvider = $fileProvider;
+        $this->linkExtension = $linkExtension;
     }
 
     /**
@@ -61,6 +65,9 @@ class WidgetConnectContentResolver extends BaseWidgetContentResolver
                 : 'VictoireWidgetConnectBundle:buttons:default.html.twig';
             $parameters['resourceOwners'][WidgetConnect::PREFIX_RESOURCE_OWNER_TEMPLATE . $resourceOwner] = $path;
         }
+
+        /** @var WidgetConnect $widget */
+        $parameters['redirectUrl'] = $this->linkExtension->victoireLinkUrl($widget->getLink()->getParameters());
 
         return $parameters;
     }

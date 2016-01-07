@@ -6,6 +6,7 @@ services:
             - { name: victoire_widget.widget_content_resolver, alias: Connect }
         arguments:
             - @victoire.widget.connect.provider.file
+            - @victoire_widget.twig.link_extension
 
     #entity alias
     victoire.widget.connect:
