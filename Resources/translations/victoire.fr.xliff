@@ -14,8 +14,8 @@
         <source>modal.form.widget.type.connect.label</source>
         <target state="new">Connect</target>
       </trans-unit>
-      <trans-unit id="3" resname="widget_connect.form.redirect_url.label',">
-        <source>widget_connect.form.redirect_url.label',</source>
+      <trans-unit id="3" resname="widget_connect.form.redirect_url.label">
+        <source>widget_connect.form.redirect_url.label</source>
         <target state="new">Url de redirection</target>
       </trans-unit>
       <trans-unit id="4" resname="widget_connect.form.form_login.label">
