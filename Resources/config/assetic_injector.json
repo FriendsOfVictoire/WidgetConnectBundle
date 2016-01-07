@@ -3,17 +3,16 @@
     {
         "javascripts":
         {
-
+            "foot":
+            [
+                "@VictoireWidgetConnectBundle/Resources/public/js/popup.js"
+            ]
         },
         "stylesheets":
         {
             "head":
             [
                 "bundles/victoirewidgetconnect/css/buttons.scss"
-            ],
-            "victoire-edit":
-            [
-                "bundles/victoirewidgetconnect/css/victoire-edit.scss"
             ]
         }
     }
