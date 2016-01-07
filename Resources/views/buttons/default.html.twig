@@ -8,18 +8,30 @@
     </a>
 {% endblock oauth_button %}
 
-<script>
-    $(document).ready(function(){
-        $('#widget-{{ id }}-{{ resource_owner }}').on('click', function(e) {
-            e.preventDefault();
-            $.oauthpopup({
-                windowName: 'QuovadisConnect', // TODO dynamic popup name ?
-                windowOptions: 'location=0,status=0,width=400,height=600', // TODO dynamic popup size ?
-                path: $('#widget-{{ id }}-{{ resource_owner }}').attr('href'),
-                callback: function() {
-                    window.location.replace("{{ redirectUrl }}");
-                }
+{% block oauth_script %}
+    <script>
+        <!--
+            $(document).ready(function(){
+                $('#widget-{{ id }}-{{ resource_owner }}').on('click', function(e) {
+                    var left, top, width = 400, height = 600;
+                    e.preventDefault();
+                    if(window.innerWidth) {
+                        left = (window.innerWidth-width)/2;
+                        top = (window.innerHeight-height)/2;
+                    } else {
+                        left = (document.body.clientWidth-width)/2;
+                        top = (document.body.clientHeight-height)/2;
+                    }
+                    $.oauthpopup({
+                        windowName: '{{ resource_owner }}',
+                        windowOptions: 'location=0,status=0,width=' + width + ',height=' + height + ',left=' + left + ',top=' + top,
+                        path: $('#widget-{{ id }}-{{ resource_owner }}').attr('href'),
+                        callback: function() {
+                            window.location.replace("{{ redirectUrl }}");
+                        }
+                    });
+                });
             });
-        });
-    });
-</script>
+        -->
+    </script>
+{% endblock oauth_script %}
