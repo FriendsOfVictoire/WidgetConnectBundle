@@ -22,9 +22,9 @@
         <source>widget_connect.form.form_login.label</source>
         <target state="new">Display login form ?</target>
       </trans-unit>
-      <trans-unit id="5" resname="widget_connect.form.general.title">
-        <source>widget_connect.form.general.title</source>
-        <target state="new">General</target>
+      <trans-unit id="5" resname="widget_connect.form.link.title">
+        <source>widget_connect.form.link.title</source>
+        <target state="new">Redirect link</target>
       </trans-unit>
       <trans-unit id="6" resname="widget_connect.form.login_form.title">
         <source>widget_connect.form.login_form.title</source>
