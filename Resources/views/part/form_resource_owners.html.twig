@@ -1,21 +1,35 @@
 {% trans_default_domain 'victoire' %}
 
-<div class="vic-col-lg-6">
+<div class="vic-col-md-8">
     <h3>{{ 'widget_connect.form.resource_owners.title'|trans }}</h3>
-    <hr>
 
-    <div class="resource_owners">
-        {{ form_widget(form.resourceOwners.resource_owners) }}
-    </div>
+    <div class="row">
+        {% for resource_owner in form.resourceOwners.resource_owners %}
+            <div class="vic-col-sm-6">
+                <label class="resource_owners">
+                    <input type="checkbox" id="{{ resource_owner.vars.id }}"
+                           name="{{ form.vars.name }}[{{ form.resourceOwners.vars.name }}][{{ form.resourceOwners.resource_owners.vars.name }}][]"
+                           value="{{ resource_owner.vars.value }}"
+                           {% if resource_owner.vars.data %}checked="checked"{% endif %}>
+                    {{ resource_owner.vars.label }}
+                </label>
 
-    {% for resource_owner in form.resourceOwners.resource_owners %}
-        {% set owner = resource_owner.vars.value %}
-        {% set class = owner in form.resourceOwners.resource_owners.vars.data ? ' vic-show' : ' vic-hidden' %}
-        <div class="resource_owner_{{ owner }}_container">
-            <div class="resource_owner_{{ owner }}{{ class }}">
-                {% set form_owner = attribute(form.resourceOwners, 'resource_owner_' ~ owner) %}
-                {{ form_row(form_owner) }}
+
+                {% set form_owner = attribute(form.resourceOwners, constant('PREFIX_RESOURCE_OWNER_LABEL', form.vars.data) ~ resource_owner.vars.value) %}
+                <div class="{{ constant('PREFIX_RESOURCE_OWNER_LABEL', form.vars.data) ~ resource_owner.vars.value }}{% if not resource_owner.vars.data %} vic-hidden{% endif %}">
+                    <label for="{{ form_owner.vars.id }}" class="vic-control-label  vic-required">
+                        {{ form_owner.vars.label }}
+                    </label>
+                    <div>
+                        <input type="text" id="{{ form_owner.vars.id }}"
+                               name="{{ form.vars.name }}[{{ form.resourceOwners.vars.name }}][{{ form_owner.vars.name }}]"
+                               required="required" class="vic-form-control"
+                               {% if form_owner.vars.value %}value="{{ form_owner.vars.value }}"{% endif %}>
+                    </div>
+                </div>
             </div>
-        </div>
-    {% endfor %}
+            {% do resource_owner.setRendered %}
+            {% do form_owner.setRendered %}
+        {% endfor %}
+    </div>
 </div>
