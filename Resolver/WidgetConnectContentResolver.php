@@ -49,7 +49,12 @@ class WidgetConnectContentResolver extends BaseWidgetContentResolver
     public function getWidgetStaticContent(Widget $widget)
     {
         $parameters = parent::getWidgetStaticContent($widget);
-        $resourceOwners = $parameters['resourceOwners']['resource_owners'];
+
+        if (isset($parameters['resourceOwners']['resource_owners'])) {
+            $resourceOwners = $parameters['resourceOwners']['resource_owners'];
+        } else {
+            $resourceOwners = [];
+        }
 
         foreach ($resourceOwners as $resourceOwner) {
             $path = $this->fileProvider->getTemplatePathFunction("VictoireWidgetConnectBundle:buttons:$resourceOwner.html.twig") ?

@@ -1,9 +1,11 @@
 {% set oauth_trans = oauth_trans is defined ? oauth_trans : 'victoire' %}
 
 {% block oauth_buttons %}
-    {% for resource_owner in resourceOwners.resource_owners %}
-        <div>
-            {% embed attribute(resourceOwners, constant('PREFIX_RESOURCE_OWNER_TEMPLATE', widget) ~ resource_owner) %}{% endembed %}
-        </div>
-    {% endfor %}
+    {% if resourceOwners.resource_owners is defined %}
+        {% for resource_owner in resourceOwners.resource_owners %}
+            <div>
+                {% embed attribute(resourceOwners, constant('PREFIX_RESOURCE_OWNER_TEMPLATE', widget) ~ resource_owner) %}{% endembed %}
+            </div>
+        {% endfor %}
+    {% endif %}
 {% endblock oauth_buttons %}
