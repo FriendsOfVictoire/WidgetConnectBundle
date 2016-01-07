@@ -24,6 +24,9 @@ victoire_widget_connect:
     resource: "@VictoireWidgetConnectBundle/Resources/config/routing.yml"
 ```
 
+Widget Connect use some style and js, you can use [Assetic Injector][link-assetic-injector] or include manually
+the assets.
+
 Then you just need to have `ROLE_VICTOIRE_DEVELOPER` and add this widget.
 
 ---
@@ -33,6 +36,8 @@ Then you just need to have `ROLE_VICTOIRE_DEVELOPER` and add this widget.
 `redirect_url`: string - Redirect to this url after success login.
 
 `form_login`: boolean - Display or Hide the form login.
+
+[link-assetic-injector]: https://github.com/AppVentus/AsseticInjectorBundle
 
 
 ---
