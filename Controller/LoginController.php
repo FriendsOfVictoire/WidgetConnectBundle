@@ -22,16 +22,6 @@ class LoginController extends Controller
         $session->set(WidgetConnect::SESSION_REDIRECT_URL, $redirectUrl);
     }
 
-    public function loginFormAction(WidgetConnect $widgetConnect)
-    {
-        $event = new AuthenticationEvent($widgetConnect);
-        $this->get('event_dispatcher')->dispatch(WidgetConnect::EVENT_BEFORE_LOGIN, $event);
-
-        $this->setRedirectUrlSession($widgetConnect);
-
-        return $this->redirect($this->generateUrl('fos_user_security_check'), 307);
-    }
-
     public function resourceOwnersAction(WidgetConnect $widgetConnect, $service)
     {
         $event = new AuthenticationEvent($widgetConnect, $service);

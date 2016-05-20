@@ -2,7 +2,7 @@
 
 {% block login_form %}
     {% if formLogin %}
-        <form action="{% block login_action%}{{ path("victoire_widget_connect_login_form", {id: widget.id}) }}{% endblock %}" method="POST">
+        <form action="{% block login_action%}{{ path("fos_user_security_check") }}{% endblock %}" method="POST">
             {% block csrf_token %}
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
             {% endblock csrf_token %}
@@ -29,6 +29,10 @@
                         <input type="password" id="password" name="_password" required="required" />
                     </div>
                 {% endblock password %}
+
+                {% block target_path %}
+                    <input type="hidden" id="target_path" name="_target_path" value="{{ vic_link_url(widget.link.parameters, false) }}" />
+                {% endblock target_path %}
             {% endblock fields %}
 
             {% block remember_me %}
