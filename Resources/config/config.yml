@@ -3,6 +3,7 @@ victoire_core:
         Connect:
             class: "Victoire\\Widget\\ConnectBundle\\Entity\\WidgetConnect"
             name: Connect
+            cache: false
             
 jms_translation:
     configs:

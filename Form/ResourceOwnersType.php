@@ -3,6 +3,8 @@
 namespace Victoire\Widget\ConnectBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
@@ -18,8 +20,8 @@ class ResourceOwnersType extends AbstractType
 
     public function __construct($resource_owners) {
         $this->resource_owners = [];
-        foreach ($resource_owners as $key => $value) {
-            $this->resource_owners[$key] = WidgetConnect::PREFIX_RESOURCE_OWNERS_FORM_LABEL . $key;
+        foreach ($resource_owners as $name => $resourceOwner) {
+            $this->resource_owners[WidgetConnect::PREFIX_RESOURCE_OWNERS_FORM_LABEL . $name] = $name;
         }
     }
 
@@ -32,15 +34,16 @@ class ResourceOwnersType extends AbstractType
     {
         foreach ($this->resource_owners as $key => $value) {
             $builder
-                ->add(WidgetConnect::PREFIX_RESOURCE_OWNER_LABEL . $key, 'text', [
+                ->add(WidgetConnect::PREFIX_RESOURCE_OWNER_LABEL.$value, TextType::class, [
                     'label'  => WidgetConnect::PREFIX_RESOURCE_OWNER_FORM_LABEL . $key,
                 ]);
         }
 
         if (!empty($this->resource_owners)) {
             $builder
-                ->add('resource_owners', 'choice', [
-                    'choices'  => $this->resource_owners,
+                ->add('resource_owners', ChoiceType::class, [
+                    'choices' => $this->resource_owners,
+                    'choices_as_values' => true,
                     'multiple' => true,
                     'expanded' => true,
                 ]);
@@ -52,7 +55,7 @@ class ResourceOwnersType extends AbstractType
      *
      * @return string The form name
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'resource_owner_type';
     }

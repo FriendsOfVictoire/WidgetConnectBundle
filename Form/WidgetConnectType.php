@@ -3,11 +3,9 @@
 namespace Victoire\Widget\ConnectBundle\Form;
 
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\FormEvent;
-use Symfony\Component\Form\FormEvents;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Victoire\Bundle\CoreBundle\Form\WidgetType;
-use Victoire\Widget\ConnectBundle\Transformer\ResourceOwnersToArrayTransformer;
+use Victoire\Bundle\FormBundle\Form\Type\LinkType;
 
 /**
  * WidgetConnect form type
@@ -22,24 +20,24 @@ class WidgetConnectType extends WidgetType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('link', 'victoire_link', [
+            ->add('link', LinkType::class, [
                 'label' => 'widget_connect.form.redirect_url.label',
             ])
             ->add('formLogin', null, [
                 'label' => 'widget_connect.form.form_login.label',
             ])
-            ->add('resourceOwners', 'resource_owner_type');
+            ->add('resourceOwners', ResourceOwnersType::class);
 
         parent::buildForm($builder, $options);
     }
 
     /**
      * bind form to WidgetConnect entity
-     * @param OptionsResolverInterface $resolver
+     * @param OptionsResolver $resolver
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
-        parent::setDefaultOptions($resolver);
+        parent::configureOptions($resolver);
 
         $resolver->setDefaults(array(
             'data_class'         => 'Victoire\Widget\ConnectBundle\Entity\WidgetConnect',
@@ -49,11 +47,11 @@ class WidgetConnectType extends WidgetType
     }
 
     /**
-     * get form name
+     * get block prefix
      *
-     * @return string The form name
+     * @return string
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'victoire_widget_form_connect';
     }
