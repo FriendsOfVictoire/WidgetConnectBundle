@@ -15,5 +15,10 @@
         "psr-0": { "Victoire\\Widget\\ConnectBundle": "" }
     },
     "minimum-stability": "dev",
-    "target-dir": "Victoire/Widget/ConnectBundle"
+    "target-dir": "Victoire/Widget/ConnectBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.5-dev"
+        }
+    }
 }
