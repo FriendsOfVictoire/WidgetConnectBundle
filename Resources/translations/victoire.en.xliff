@@ -77,6 +77,10 @@
         <source>widget_connect.form.resource_owners.linkedin</source>
         <target>Linkedin</target>
       </trans-unit>
+      <trans-unit>
+        <source>Bad credentials.</source>
+        <target>Bad credentials.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

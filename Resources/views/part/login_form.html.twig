@@ -15,7 +15,7 @@
                                 {{ 'victoire.widget.connect.form.username'|trans({}, login_trans) }}
                             {% endblock username_label %}
                         </label>
-                        <input type="text" id="username" name="_username" required="required" />
+                        <input type="text" id="username" name="_username" required="required" value="{{ app.session.flashbag.get('LAST_USERNAME')|first }}"/>
                     </div>
                 {% endblock username %}
 

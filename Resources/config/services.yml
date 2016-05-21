@@ -38,11 +38,13 @@ services:
         class: Victoire\Widget\ConnectBundle\Handler\AuthenticationFailureHandler
         arguments:
             - @event_dispatcher
+            - @translator
             - @session
             - @http_kernel
             - @security.http_utils
             - {}
             - @logger
+            - %victoire.widget.connect.useFlashNotification%
 
     #PROVIDER
     victoire.widget.connect.provider.file:

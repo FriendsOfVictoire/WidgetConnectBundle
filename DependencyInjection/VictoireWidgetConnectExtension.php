@@ -23,6 +23,7 @@ class VictoireWidgetConnectExtension extends Extension implements PrependExtensi
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
+        $container->setParameter('victoire.widget.connect.useFlashNotification', $config['useFlashNotification']);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
