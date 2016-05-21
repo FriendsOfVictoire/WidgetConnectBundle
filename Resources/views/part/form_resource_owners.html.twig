@@ -11,14 +11,14 @@
                            name="{{ form.vars.name }}[{{ form.resourceOwners.vars.name }}][{{ form.resourceOwners.resource_owners.vars.name }}][]"
                            value="{{ resource_owner.vars.value }}"
                            {% if resource_owner.vars.data %}checked="checked"{% endif %}>
-                    {{ resource_owner.vars.label }}
+                    {{ resource_owner.vars.label|trans }}
                 </label>
 
 
                 {% set form_owner = attribute(form.resourceOwners, constant('PREFIX_RESOURCE_OWNER_LABEL', form.vars.data) ~ resource_owner.vars.value) %}
                 <div class="{{ constant('PREFIX_RESOURCE_OWNER_LABEL', form.vars.data) ~ resource_owner.vars.value }}{% if not resource_owner.vars.data %} vic-hidden{% endif %}">
                     <label for="{{ form_owner.vars.id }}" class="vic-control-label  vic-required">
-                        {{ form_owner.vars.label }}
+                        {{ form_owner.vars.label|trans }}
                     </label>
                     <div>
                         <input type="text" id="{{ form_owner.vars.id }}"

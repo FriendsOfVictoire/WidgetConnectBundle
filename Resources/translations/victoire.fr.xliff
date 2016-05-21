@@ -35,6 +35,10 @@
         <target>Boutons de connexion</target>
       </trans-unit>
       <trans-unit>
+        <source>widget_connect.form.link.title</source>
+        <target>Redirection après connexion</target>
+      </trans-unit>
+      <trans-unit>
         <source>victoire.widget.connect.form.username</source>
         <target>Username</target>
       </trans-unit>
@@ -77,6 +81,10 @@
       <trans-unit>
         <source>widget_connect.form.resource_owners.linkedin</source>
         <target>Linkedin</target>
+      </trans-unit>
+      <trans-unit>
+        <source>widget_connect.form.resource_owner.widget_connect.form.resource_owners.linkedin</source>
+        <target>Libellé</target>
       </trans-unit>
       <trans-unit>
         <source>Bad credentials.</source>
