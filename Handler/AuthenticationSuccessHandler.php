@@ -6,10 +6,9 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Security\Http\Authentication\AuthenticationSuccessHandlerInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
-use Symfony\Component\Security\Core\SecurityContext;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\Routing\Router;
+use Symfony\Component\Security\Http\ParameterBagUtils;
 use Victoire\Widget\ConnectBundle\Entity\WidgetConnect;
 use Victoire\Widget\ConnectBundle\Event\HandlerEvent;
 
@@ -29,12 +28,17 @@ class AuthenticationSuccessHandler implements AuthenticationSuccessHandlerInterf
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token)
     {
-        $refererUrl = $request->headers->get('referer');
-        $sessionUrl = $this->session->get(WidgetConnect::SESSION_REDIRECT_URL);
-        $redirectUrl = $sessionUrl ? : $refererUrl;
-        $response = new RedirectResponse($redirectUrl);
+        if ($targetUrl = ParameterBagUtils::getRequestParameterValue($request, '_target_path')) {
+            $response = new RedirectResponse($targetUrl);
+        }
 
-        $this->session->remove(WidgetConnect::SESSION_REDIRECT_URL);
+        if ($sessionUrl = $this->session->get(WidgetConnect::SESSION_REDIRECT_URL)) {
+            $this->session->remove(WidgetConnect::SESSION_REDIRECT_URL);
+            $response = new RedirectResponse($sessionUrl);
+        } else {
+            $refererUrl = $request->headers->get('referer');
+            $response = new RedirectResponse($refererUrl);
+        }
 
         $event = new HandlerEvent($response);
         $this->dispatcher->dispatch(WidgetConnect::EVENT_AFTER_LOGIN_SUCCESS, $event);
