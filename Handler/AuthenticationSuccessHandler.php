@@ -30,9 +30,7 @@ class AuthenticationSuccessHandler implements AuthenticationSuccessHandlerInterf
     {
         if ($targetUrl = ParameterBagUtils::getRequestParameterValue($request, '_target_path')) {
             $response = new RedirectResponse($targetUrl);
-        }
-
-        if ($sessionUrl = $this->session->get(WidgetConnect::SESSION_REDIRECT_URL)) {
+        } elseif ($sessionUrl = $this->session->get(WidgetConnect::SESSION_REDIRECT_URL)) {
             $this->session->remove(WidgetConnect::SESSION_REDIRECT_URL);
             $response = new RedirectResponse($sessionUrl);
         } else {
