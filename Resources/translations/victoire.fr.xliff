@@ -40,7 +40,7 @@
       </trans-unit>
       <trans-unit>
         <source>victoire.widget.connect.form.username</source>
-        <target>Username</target>
+        <target>Adresse email</target>
       </trans-unit>
       <trans-unit>
         <source>victoire.widget.connect.form.password</source>
