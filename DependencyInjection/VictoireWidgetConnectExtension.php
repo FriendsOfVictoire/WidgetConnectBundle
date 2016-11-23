@@ -32,6 +32,10 @@ class VictoireWidgetConnectExtension extends Extension implements PrependExtensi
     public function prepend(ContainerBuilder $container){
         $config = [
             'firewalls' => [
+                'dev' => [
+                    'pattern' => '^/(_(profiler|wdt)|css|images|js)/',
+                    'security' => false,
+                ],
                 'main' => [
                     'form_login' => [
                         'success_handler' => 'victoire.widget.connect.handler.success.authentication',
