@@ -2,91 +2,91 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
   <file date="2013-11-27T18:15:06Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
     <body>
-      <trans-unit>
+      <trans-unit id="1">
         <source>widget.connect.new.action.label</source>
         <target>Connect</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="2">
         <source>modal.form.widget.type.connect.label</source>
         <target>Connect</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="3">
         <source>widget_connect.form.redirect_url.label',</source>
         <target>Url de redirection</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="4">
         <source>widget_connect.form.form_login.label</source>
         <target>Afficher le formulaire de connexion ?</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="5">
         <source>widget_connect.form.general.title</source>
         <target>Général</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="6">
         <source>widget_connect.form.login_form.title</source>
         <target>Formulaire de connexion</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="7">
         <source>widget_connect.form.login_form.preview</source>
         <target>Prévisualisation</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="8">
         <source>widget_connect.form.resource_owners.title</source>
         <target>Boutons de connexion</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="9">
         <source>widget_connect.form.link.title</source>
         <target>Redirection après connexion</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="10">
         <source>victoire.widget.connect.form.username</source>
         <target>Adresse email</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="11">
         <source>victoire.widget.connect.form.password</source>
         <target>Mot de passe</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="12">
         <source>victoire.widget.connect.form.remember</source>
         <target>Se souvenir de moi</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="13">
         <source>victoire.widget.connect.form.submit</source>
         <target>Se connecter</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="14">
         <source>victoire.widget.connect.logout.title</source>
         <target>Déconnexion</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="15">
         <source>victoire.widget.connect.logout.label</source>
         <target>Déconnexion</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="16">
         <source>victoire.widget.connect.logout.label</source>
         <target>Déconnexion</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="17">
         <source>widget_connect.form.resource_owners.facebook</source>
         <target>Facebook</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="18">
         <source>widget_connect.form.resource_owners.twitter</source>
         <target>Twitter</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="19">
         <source>widget_connect.form.resource_owners.google</source>
         <target>Google</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="20">
         <source>widget_connect.form.resource_owners.linkedin</source>
         <target>Linkedin</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="21">
         <source>widget_connect.form.resource_owner.widget_connect.form.resource_owners.linkedin</source>
         <target>Libellé</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="22">
         <source>Bad credentials.</source>
         <target>Les identifiants sont invalides</target>
       </trans-unit>

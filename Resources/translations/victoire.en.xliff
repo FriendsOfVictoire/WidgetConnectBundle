@@ -5,79 +5,79 @@
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
     </header>
     <body>
-      <trans-unit>
+      <trans-unit id="1">
         <source>widget.connect.new.action.label</source>
         <target>Connect</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="2">
         <source>modal.form.widget.type.connect.label</source>
         <target>Connect</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="3">
         <source>widget_connect.form.redirect_url.label</source>
         <target>Redirect URL</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="4">
         <source>widget_connect.form.form_login.label</source>
         <target>Display login form ?</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="5">
         <source>widget_connect.form.general.title</source>
         <target>General</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="6">
         <source>widget_connect.form.login_form.title</source>
         <target>Login form</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="7">
         <source>widget_connect.form.login_form.preview</source>
         <target>Preview</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="8">
         <source>widget_connect.form.resource_owners.title</source>
         <target>Login buttons</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="9">
         <source>victoire.widget.connect.form.username</source>
         <target>Username</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="10">
         <source>victoire.widget.connect.form.password</source>
         <target>Password</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="11">
         <source>victoire.widget.connect.form.remember</source>
         <target>Remember me</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="12">
         <source>victoire.widget.connect.form.submit</source>
         <target>Login</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="13">
         <source>victoire.widget.connect.logout.title</source>
         <target>Logout</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="14">
         <source>victoire.widget.connect.logout.label</source>
         <target>Logout</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="15">
         <source>widget_connect.form.resource_owners.facebook</source>
         <target>Facebook</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="16">
         <source>widget_connect.form.resource_owners.twitter</source>
         <target>Twitter</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="17">
         <source>widget_connect.form.resource_owners.google</source>
         <target>Google</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="18">
         <source>widget_connect.form.resource_owners.linkedin</source>
         <target>Linkedin</target>
       </trans-unit>
-      <trans-unit>
+      <trans-unit id="19">
         <source>Bad credentials.</source>
         <target>Bad credentials.</target>
       </trans-unit>
