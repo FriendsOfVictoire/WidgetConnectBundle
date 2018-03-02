@@ -17,7 +17,7 @@ class FileExtension extends \Twig_Extension
 
     public function getFunctions() {
         return [
-            'get_template_path' => new \Twig_Function_Method($this, 'getTemplatePathFunction'),
+            new \Twig_SimpleFunction('get_template_path', [$this, 'getTemplatePathFunction']),
         ];
     }
 
